@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Sneha ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+.page{
+display:none;
+padding:60px;
+}
+
+.active{
+display:block;
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:25px;
+background:white;
+color:#ff2e63;
+cursor:pointer;
+margin:15px;
+}
+
+/* hearts */
+
+.heart{
+position:fixed;
+top:-10px;
+font-size:20px;
+color:red;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{transform:translateY(110vh);}
+}
+
+</style>
+
+<script>
+
+function nextPage(id){
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+}
+
+/* falling hearts */
+
+function hearts(){
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),5000);
+},200);
+}
+
+/* 100 love you */
+
+function generateLove(){
+let text="";
+for(let i=0;i<100;i++){
+text+="I Love You Sneha 💋<br>";
+}
+document.getElementById("loveArea").innerHTML=text;
+}
+
+/* no button run */
+
+function moveNo(){
+let btn=document.getElementById("noBtn");
+btn.style.position="absolute";
+btn.style.left=Math.random()*80+"%";
+btn.style.top=Math.random()*80+"%";
+}
+
+</script>
+
+</head>
+
+<body onload="hearts();generateLove()">
+
+<!-- page 1 -->
+
+<div class="page active" id="p1">
+
+<h1>❤️ 100 Love You For Sneha ❤️</h1>
+
+<div id="loveArea"></div>
+
+<button onclick="nextPage('p2')">Next 💌</button>
+
+</div>
+
+<!-- page 2 -->
+
+<div class="page" id="p2">
+
+<h1>Sneha 🌸</h1>
+
+<p>
+Tumhari smile duniya ki sabse beautiful cheez hai.  
+Jab tum hasta ho na, sach me lagta hai life perfect hai.  
+Tum sirf meri girlfriend nahi ho, tum meri happiness ho.
+</p>
+
+<button onclick="nextPage('p3')">Next ❤️</button>
+
+</div>
+
+<!-- page 3 -->
+
+<div class="page" id="p3">
+
+<h1>Will You Stay With Me Forever? 💘</h1>
+
+<button onclick="nextPage('p4')">YES ❤️</button>
+
+<button id="noBtn" onmouseover="moveNo()">NO 😝</button>
+
+</div>
+
+<!-- page 4 -->
+
+<div class="page" id="p4">
+
+<h1>Message From Firoj 💌</h1>
+
+<p>
+Sneha,  
+Main perfect nahi hoon.  
+Kabhi kabhi galti bhi karta hoon.  
+
+Lekin ek cheez sach hai —  
+tumne mujhe choose kiya, aur ye mere liye duniya ki sabse badi baat hai.  
+
+Main bas itna chahta hoon  
+ki main hamesha tumhare saath rahun  
+aur tumhari life ko thoda sa aur happy bana saku.  
+
+I want to stay with you forever. ❤️
+</p>
+
+<h2>Forever Yours,  
+Firoj 💖</h2>
+
+</div>
+
+</body>
+</html>
